@@ -1,0 +1,15 @@
+{
+    "name": "matrix",
+    "desc": "Este programa calcula el determinante de una matriz. Recibe como entrada un fichero de texto con la matriz. Este fichero contendrá los elementos de la matriz dispuestos en filas y columnas, separados por espacios y saltos de línea.",
+    "inputs": [
+        {"name": "data", "type": "file", "desc": "Fichero que contiene la matriz"}
+    ],
+    "args": [
+        {"name": "-n", "desc": "filas de la matriz"},
+        {"name": "-m", "desc": "filas de la matriz"},
+        {"name": "-p", "desc": "usar x funcionalidad", "bool": "yes"},
+        {"name": "-r", "desc": "usar método recursivo", "bool": "yes"},
+        {"name": "-z", "desc": "tercera dimension de la matriz"},
+        {"name": "-b", "desc": "usar otra funcionalidad", "bool": "yes"}
+    ]
+}

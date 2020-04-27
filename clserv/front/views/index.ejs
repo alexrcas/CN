@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+  <head>
+  	<title>Cloud</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/custom.css">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+        </div>
+	  		<h1><a href="index.html" class="logo">Cloud</a></h1>
+        <ul class="list-unstyled components mb-5">
+          <li class="active">
+            <a href="#"><span class="fa fa-home mr-3"></span> Inicio</a>
+          </li>
+          <li>
+              <a href="#"><span class="fa fa-user mr-3"></span> Panel</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-sticky-note mr-3"></span> Otra</a>
+          </li>
+        </ul>
+
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+        <h2 class="mb-4">Cloud</h2>
+
+        <div class="container-fluid d-flex">
+
+        <% services.forEach(service => { %>
+
+          <div class="card m-3">
+            <div class="card-body">
+              <h4 class="card-title"><%= service %> </h4>
+              <a href="form?service=<%= service %> " class="btn btn-primary">Ejecutar</a>
+            </div>
+          </div>
+
+        <% }) %>
+
+      </div>
+
+      </div>
+		</div>
+
+    <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/popper.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <script src="javascripts/main.js"></script>
+  </body>
+</html>

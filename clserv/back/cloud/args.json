@@ -1,0 +1,8 @@
+{
+    "name": "args",
+    "desc": "Este es un programa de muestra",
+    "inputs": [],
+    "args": [
+        {"name": "-a", "desc": "Usar argumentos", "bool": "yes"}
+    ]
+}

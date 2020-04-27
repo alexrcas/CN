@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+  <head>
+
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/custom.css' />
+
+  </head>
+
+
+
+  <body>
+
+		<div class="wrapper d-flex align-items-stretch">
+      <div id="content" class="p-4 p-md-5">
+        <h2 id="title" class="mb-4"><%= title %></h2>
+        <input type="text" name="service" value="<%= title %>" hidden>
+        <%= desc %> 
+          <form class="form-wrap" method="post" action='/api/exec' enctype="multipart/form-data">
+
+            <% inputs.forEach(input => { %>
+             <span><%= input.desc %> </span>
+             <input type="<%=input.type%>" name="<%=input.name%> ">
+            <% }) %>
+
+            <% args.forEach(arg => { %>
+              <div class="form-item">
+                  <span><%= arg.desc %></span>
+                  
+                  <% if (!(arg.bool)) { %>
+                    <input type="text" name="<%=arg.name%>">
+                    <% } else { %>
+                    <input type="checkbox" name="<%=arg.name%>">
+                  <% } %> 
+                </div>
+            <% }) %>
+            <button type="submit" class="btn btn-success">Ejecutar</button>
+              </form>
+              <h6 class="mt-5">Resultado:</h3>
+                <div class="result-div">
+                  <br>
+                  <span id="cmd-output"></span>
+                  <br>
+                </div>
+                <div class="buttons mt-4">
+          <button class="btn btn-primary" onclick=location.href="/">Volver</button>
+        </div>
+          </div>
+          </div>
+
+
+      </div>
+
+      </div>
+		</div>
+
+
+    <script src="../javascripts/jquery.min.js"> </script>
+    <script src="../javascripts/popper.js"> </script>
+    <script src="../javascripts/bootstrap.min.js"> </script>
+    <script src="../javascripts/main.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js" integrity="sha256-OgiHfllOBEOiWQ2OcBsDncRG2k7QBW9Rs1dB7MH2N2s=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.js" integrity="sha256-vHsV98JlYVo7h9eo1BQrqWgGQDt6prGrUbKAlHfP+0Y=" crossorigin="anonymous"></script>
+    <script src="../javascripts/form.js"> </script>
+
+  </body>
+
+
+</html>
