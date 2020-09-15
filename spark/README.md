@@ -6,6 +6,9 @@ El reto consiste en utilizar Spark para contar los hashtags más mencionados en 
 hashtags a voluntad para realizar una comparativa. Por ejemplo, podrían analizarse hashtags de apoyo a Donald Trump o Joe Biden para analizar el apoyo
 de ambas carreras presidenciales en Twitter. Sin embargo, para este ejemplo se han buscado simplemente los 15 hashtags más utilizados.
 
+![](https://i.ibb.co/whcBjxd/image.png)
+
+
 ## Arquitectura
 Para lograrlo, se ha diseñado la siguiente arquitectura:
 
