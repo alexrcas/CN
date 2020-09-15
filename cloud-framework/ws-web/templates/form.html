@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    {% include 'header.html' %}
+</head>
+
+<body>
+
+    {% include 'nav.html' %}
+
+    <div class="container mt-3 border">
+        <h2>{{program.name}}</h2>
+        <h5>Autor: {{program.author}}</h5>
+        <p>{{program.description}}</p>
+
+    </div>
+
+    <div class="container border mt-3">
+        <form action="/exec/{{program.name}}" method="post", enctype="multipart/form-data">
+
+            {% for input in program.inputs  %}
+            <div class="form-group">
+                <label for="{{input.name}}">{{input.name}}</label>
+                {% if input.type == 'file' %}
+                <input type="{{input.type}}" class="form-control" name="file">
+                {% else %}
+                <input type="{{input.type}}" class="form-control" name="{{input.id}}">
+                {% endif %}
+            </div>
+            {% endfor %}
+
+
+            {% if program.exec == 'mpirun' %}
+            <h6>Este programa soporta paralelización mediante MPI</h6>
+            <label for="np">Número de núcleos</label>
+            <input type="text" class="form-control" name="np">
+            {% endif %}
+
+            <input type="text" class="form-control" name="exec" value="{{program.exec}}" hidden>
+
+            <button class="mt-3 btn btn-success">Ejecutar</button>
+
+        </form>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+
+</html>

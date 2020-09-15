@@ -1,0 +1,12 @@
+{
+    "name": "Otro programa",
+    "author": "Alexis Rodríguez Casañas",
+    "description": "Este programa aplica un filtro gaussiano y de escala de grises a una imagen",
+    "inputs": [
+        {"id" :"input-img", "name": "Imagen de entrada", "type": "file"},
+        {"id" :"output-img", "name": "Fichero de matriz", "type": "file"},
+        {"id" :"input-img", "name": "Otra imagen de entrada", "type": "file"},
+        {"id" :"output-img", "name": "Nombre de imagen de salida", "type": "text"}
+    ],
+    "exec": "mpirun"
+}
